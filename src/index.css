@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@theme {
+  --font-display: "Rubik Variable";
+  --font-arab: "Noto Naskh Arabic Variable";
+}
+@plugin "daisyui" {
+  themes: winter --default, winter --prefersdark;
+}
