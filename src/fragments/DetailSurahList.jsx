@@ -6,6 +6,7 @@ const DetailSurahList = ({ data, latinStatus, murottalStatus }) => {
   const verses = data.data.verses;
   const [currentIndex, setCurrentIndex] = useState(null);
   const audioRef = useRef(null);
+  const verseRefs = useRef([]);
 
   useEffect(() => {
     if (audioRef.current) {
@@ -15,7 +16,7 @@ const DetailSurahList = ({ data, latinStatus, murottalStatus }) => {
         if (currentIndex < verses.length - 1) {
           setCurrentIndex((prev) => prev + 1);
         } else {
-          setCurrentIndex(null); // berhenti kalau sudah ayat terakhir
+          setCurrentIndex(null);
         }
       };
     }
@@ -27,18 +28,31 @@ const DetailSurahList = ({ data, latinStatus, murottalStatus }) => {
     }
   }, [currentIndex, murottalStatus]);
 
+  useEffect(() => {
+    if (currentIndex !== null && verseRefs.current[currentIndex]) {
+      verseRefs.current[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [currentIndex]);
+
   return (
     <div className="w-full flex flex-col space-y-7 my-7 text-end">
       {data.data.verses.map((verse, index) => (
-        <DetailSurahItem
+        <div
           key={verse.number.inQuran}
-          verse={verse}
-          latinStatus={latinStatus}
-          murottalStatus={murottalStatus}
-          isPlaying={currentIndex === index}
-          onPlay={() => setCurrentIndex(index)}
-          audioRef={currentIndex === index ? audioRef : null}
-        />
+          ref={(el) => (verseRefs.current[index] = el)}
+        >
+          <DetailSurahItem
+            key={verse.number.inQuran}
+            verse={verse}
+            latinStatus={latinStatus}
+            murottalStatus={murottalStatus}
+            onPlay={() => setCurrentIndex(index)}
+            audioRef={currentIndex === index ? audioRef : null}
+          />
+        </div>
       ))}
     </div>
   );

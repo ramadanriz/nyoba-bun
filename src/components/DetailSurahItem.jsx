@@ -4,16 +4,12 @@ const DetailSurahItem = ({
   verse,
   latinStatus,
   murottalStatus,
-  isPlaying,
+
   onPlay,
   audioRef,
 }) => {
   return (
-    <div
-      className={`flex flex-col items-end justify-end border-b-2 border-neutral py-4 ${
-        isPlaying ? "bg-primary/10" : ""
-      }`}
-    >
+    <div className="flex flex-col items-end justify-end border-b-2 border-neutral py-4">
       <div className="relative flex w-full items-start justify-between">
         <div className="bg-neutral text-neutral-content mr-2 flex h-12 w-12 items-center justify-center rounded-full p-6 font-bold">
           <p className="font-bold">{verse.number.inSurah}</p>
@@ -48,7 +44,6 @@ DetailSurahItem.propTypes = {
   verse: PropTypes.object,
   latinStatus: PropTypes.bool,
   murottalStatus: PropTypes.bool,
-  isPlaying: PropTypes.bool,
   onPlay: PropTypes.func,
   audioRef: PropTypes.object,
 };
