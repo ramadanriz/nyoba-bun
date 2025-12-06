@@ -1,16 +1,30 @@
-# React + Vite
+# 🕌 Deen Area
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Pintu gerbang digital Anda menuju sumber daya Islami.**
 
-Currently, two official plugins are available:
+[![Lisensi](https://img.shields.io/badge/Lisensi-MIT-green)](LICENSE) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Deskripsi Proyek
 
-## React Compiler
+**Deen Area** adalah aplikasi web modern yang dirancang untuk membantu umat Islam mengakses berbagai sumber daya keagamaan penting dengan mudah dan intuitif. Proyek ini bertujuan untuk menyediakan *one-stop solution* bagi kebutuhan sehari-hari terkait ibadah dan pengetahuan Islam.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Aplikasi ini di-*deploy* melalui [Netlify](https://deen-area.netlify.app/).
 
-## Expanding the ESLint configuration
+## ✨ Fitur Utama
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Waktu Sholat Akurat:** Menampilkan jadwal sholat harian berdasarkan lokasi pengguna.
+* **Al-Qur'an Digital:** Akses penuh ke seluruh Surah dan Ayat Al-Qur'an dengan terjemahan.
+* **Antarmuka Responsif:** Dapat diakses dengan nyaman di perangkat *desktop* maupun *mobile*.
+
+## 🛠️ Teknologi yang Digunakan
+
+Proyek ini dibangun menggunakan *stack* teknologi modern berikut:
+
+| Kategori | Teknologi | Versi | Deskripsi |
+| :--- | :--- | :--- | :--- |
+| **Library** | [React] | [19.2.0] | Kerangka kerja utama untuk membangun UI. |
+| **Styling** | [Tailwind CSS / Daisy UI] | [4.1.17 / 5.4.7] | Digunakan untuk desain yang cepat dan responsif. |
+| **API Waktu Sholat** | https://api.myquran.com/v2/sholat/kota/semua | N/A | Sumber data untuk jadwal sholat. |
+| **API Al-Qur'an** | https://api.quran.gading.dev/surah | N/A | Sumber data teks dan terjemahan Al-Qur'an. |
+| **API Doa** | https://open-api.my.id/api/doa | N/A | Sumber data doa harian. |
+| **API Asmaul Husna** | https://asmaul-husna-api.vercel.app/api/all | N/A | Sumber data Asmaul Husna. |
